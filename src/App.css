@@ -1,0 +1,200 @@
+/**
+ * Main application styles.
+ * Layout is clean and responsive for engineering validation.
+ */
+
+.app {
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* === GlobalX-style cinematic background (REFINED) === */
+  background:
+    /* Strong top-left purple light */
+    radial-gradient(
+      1000px 700px at 12% 18%,
+      rgba(88, 52, 170, 0.45),
+      rgba(11, 15, 26, 0.96) 58%
+    ),
+
+    /* Cool blue glow bottom-right */
+    radial-gradient(
+      900px 600px at 88% 78%,
+      rgba(46, 197, 255, 0.28),
+      rgba(11, 15, 26, 0.99) 62%
+    ),
+
+    /* Edge vignette (THIS was missing before) */
+    radial-gradient(
+      140% 120% at 50% 50%,
+      rgba(11, 15, 26, 0) 40%,
+      rgba(11, 15, 26, 0.85) 75%,
+      rgba(11, 15, 26, 1) 100%
+    ),
+
+    /* Base tone */
+    linear-gradient(
+      135deg,
+      #120A24,
+      #0B0F1A
+    );
+
+  color: #ffffff;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.1rem;
+}
+
+.app-main {
+  min-height: 400px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.upload-section,
+.processing-section,
+.error-section,
+.results-section {
+  padding: 2rem;
+  border-radius: 10px;
+
+  /* Dark surface — unchanged */
+  background: rgba(12, 16, 30, 0.55);
+
+  margin-bottom: 1rem;
+}
+
+.error-section {
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  text-align: center;
+}
+
+.error-section p {
+  margin-bottom: 1rem;
+}
+
+.btn-dismiss {
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-dismiss:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.processing-section {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #2EC5FF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.processing-hint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.5rem;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btn-new-analysis {
+  padding: 0.75rem 1.5rem;
+  background: #2EC5FF;
+  border: none;
+  border-radius: 6px;
+  color: #0B0F1A;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-new-analysis:hover {
+  background: #25B3E8;
+}
+
+.results-summary {
+  background: rgba(8, 12, 24, 0.65);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.summary-value {
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.results-note {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+.raw-data {
+  margin-top: 2rem;
+}
+
+.raw-data summary,
+.raw-data pre {
+  background: rgba(8, 12, 24, 0.75);
+  border-radius: 6px;
+}
