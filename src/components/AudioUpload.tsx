@@ -96,7 +96,8 @@ export function AudioUpload({ onAnalysisComplete, onError, onProcessingStart }: 
     onProcessingStart();
 
     try {
-      const result = await uploadAndAnalyze(selectedFile, 'cuda', (percent) => {
+   // const result = await uploadAndAnalyze(selectedFile, 'cuda', (percent) => {
+      const result = await uploadAndAnalyze(selectedFile, 'cpu', (percent) => {
         setUploadProgress(percent);
       });
       onAnalysisComplete(result);
