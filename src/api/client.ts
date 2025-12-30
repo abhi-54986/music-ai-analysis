@@ -9,7 +9,7 @@
 import axios, { AxiosError } from 'axios';
 import type { AnalysisResponse, ErrorResponse } from '../types/api';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://music-ai-analysis.onrender.com';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
